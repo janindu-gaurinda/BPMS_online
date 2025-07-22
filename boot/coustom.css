@@ -1,0 +1,85 @@
+.nav-static {
+    background: #000;
+    font-family: 'Acumin Variable Concept', sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: larger;
+  }
+
+  .nav-static .nav-link {
+    color: white !important;
+  }
+
+  .nav-static .nav-divider {
+    border-left: 1px solid white;
+    height: 50px;
+    align-self: center;
+  }
+
+  .nav-static .nav-img-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+  }
+
+  .nav-static .nav-item-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-static .navbar-toggler {
+    border: none;
+  }
+
+  .nav-static .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .nav-static .datetime-container span {
+    display: block;
+  }
+  /* ============================================= */
+  /* nav bar  */
+  /* ============================================= */
+  .footer-static-wrapper {
+    background: #000;
+    font-family: 'Acumin Variable Concept', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+  }
+  
+  .footer-static-text {
+    color: white;
+    padding: 10px;
+  }
+  /* ============================================= */
+  /* nav bar  */
+  /* ============================================= */
+    .swal2-popup.wide-swal-popup {
+            width: 600px !important;
+            max-width: 95% !important;
+            max-height: none !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            box-sizing: border-box !important;
+            overflow: visible !important;
+            /* Remove any scroll */
+        }
+
+        .swal2-html-container {
+            overflow: visible !important;
+            /* No scrolling inside text container */
+        }
+
+        .swal2-confirm.custom-ok-btn {
+            background-color: #28a745 !important;
+            color: white !important;
+            font-size: 15px !important;
+            padding: 6px 20px !important;
+            border-radius: 25px !important;
+        }
+
+        .swal2-confirm.custom-ok-btn:hover {
+            background-color: #218838 !important;
+        }

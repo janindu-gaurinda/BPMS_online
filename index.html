@@ -1,0 +1,304 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LogIn</title>
+	<link rel="icon" type="image/x-icon" href="img/BP_Icon.png">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="boot/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Icons -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="boot/bootstrap-icons.css" rel="stylesheet">
+	<!-- DataTables CSS -->
+	<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+	<link href="boot/dataTables.bootstrap5.min.css" rel="stylesheet">
+	<!-- DataTables Buttons CSS -->
+	<link href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css" rel="stylesheet">
+	<link href="boot/buttons.bootstrap5.min.css" rel="stylesheet">
+	<!-- Your custom CSS -->
+	<link href="boot/coustom.css" rel="stylesheet">
+
+	<style>
+		@font-face {
+			font-family: 'Acumin Variable Concept';
+			src: url('./assets/font/AcuminVariableConcept-WideExtraLight.ttf');
+		}
+
+		html,
+		body {
+			background: #ECF0F1;
+			/* off white background color */
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: 'Acumin Variable Concept', sans-serif !important;
+			overflow-y: hidden;
+			/* Prevent scrolling of the entire page */
+		}
+
+		.page {
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			/* Full viewport height */
+			position: relative;
+			overflow-y: auto;
+			/* Enable scrolling within .page if content exceeds viewport height */
+		}
+
+		.content {
+			flex: 1;
+			/* Adjust to occupy remaining space */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* Center content horizontally */
+			justify-content: center;
+			/* Center content vertically */
+		}
+
+		.img_dashbord {
+			height: auto;
+			/* Adjust image height */
+			max-width: 80%;
+			/* Ensure images don't exceed container width */
+		}
+
+		.para_text_ {
+			font-size: 15px;
+		}
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			/* Center columns horizontally */
+			align-items: center;
+			/* Center columns vertically */
+			height: 100%;
+			/* Make the row take the full height of the container */
+		}
+
+		.col-3 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* Center content horizontally */
+			justify-content: center;
+			/* Center content vertically */
+			margin-bottom: 20px;
+			/* Add margin to separate the rows */
+		}
+
+		.col-3 p {
+			margin-top: 10px;
+			/* Space between image and text */
+		}
+
+		.box_log {
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			font-family: 'Acumin Variable Concept', sans-serif !important;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<div class="header">
+			<!-- 🔽 Static Navbar HTML -->
+			<nav class="navbar navbar-expand-lg nav-static">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="admin_dashboard.html">
+						<img src="img/BP_Header.png" alt="BP_Header" style="height: 50px;">
+					</a>
+
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#staticNavbar" aria-controls="staticNavbar" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="staticNavbar">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item nav-item-center ps-2">
+								<h4 class="text-white mb-0" style="font-size: 25px;">Admin</h4>
+							</li>
+							<li class="nav-item nav-item-center ps-2">
+								<div class="nav-divider"></div>
+							</li>
+							<li class="nav-item nav-item-center text-center ps-2">
+								<div class="datetime-container text-white">
+									<span id="static-date" style="font-size: 20px;"></span>
+									<span id="static-time" style="font-size: 25px; font-weight: bold;"></span>
+								</div>
+							</li>
+							<li class="nav-item nav-item-center ps-2">
+								<div class="nav-divider"></div>
+							</li>
+							<li class="nav-item nav-item-center ps-2">
+								<img src="img/User.png" alt="User Icon" class="nav-img-icon">
+							</li>
+							<li class="nav-item nav-item-center ps-2">
+								<a href="index.html" onclick="return confirmLogout();">
+									<img src="img/Logout.png" alt="Logout Icon" class="nav-img-icon">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<main class="content">
+
+			<div class="container">
+				<div class="d-flex justify-content-center">
+					<div class="col-4">
+						<div class="box_log">
+							<form action="" method="post" class="m-3">
+								<div class="mb-4">
+									<input type="text" required
+										class="form-control border border-black rounded inpu_pading" id="username"
+										name="name" placeholder="Username" aria-label="username"
+										aria-describedby="addon-wrapping">
+								</div>
+								<div class="mb-4" style="text-align: left;">
+									<input type="password" required
+										class="form-control border border-black rounded inpu_pading" id="password"
+										name="password" autocomplete="off" placeholder="Password" aria-label="password"
+										aria-describedby="addon-wrapping">
+									<div class="d-flex align-items-center text-start mt-2">
+										<input type="checkbox" id="showPassword"
+											class="form-check-input border border-black" onclick="myFunction()">
+										<label for="showPassword" class="text-black ms-2">Show Password</label>
+									</div>
+								</div>
+								<div class="d-flex flex-column align-items-center justify-content-center">
+									<a href="admin_dashboard.html"
+										class="btn btn-primary col-6 rounded inpu_pading_btn">
+										<span class="fw-bold">Submit</span>
+									</a>
+									<small class="text-muted mt-2" style="font-size: 0.8rem;">
+										Simply click the Submit button — no need to fill in any details.
+									</small>
+								</div>
+
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</main>
+
+		<footer class="footer">
+			<footer class="footer-static-wrapper text-center">
+				<div class="footer-static-text">
+					Design & Develop by AASL IT
+				</div>
+			</footer>
+		</footer>
+	</div>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<!-- Popper and Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+	<!-- DataTables JS -->
+	<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+	<!-- DataTables Buttons JS -->
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+
+	<!-- Your custom JS -->
+	<script src="boot/coustom.js"></script>
+	<script src="boot/sweetalert2@11.js"></script>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("password");
+			if (x.type === "password") {
+				x.type = "text";
+			} else {
+				x.type = "password";
+			}
+		}
+	</script>
+	<script>
+		if (!sessionStorage.getItem('welcomeShown')) {
+			// Page 1
+			Swal.fire({
+				title: '<span style="font-size: 22px; font-weight: bold;">✈️ AASL Passenger Boarding Pass Sacn System</span>',
+				html: `
+        <p style="text-align: left; font-size: 14px; margin-top: 15px;">
+          This web application was developed to automate the manual system for Airport & Aviation Services (Sri Lanka) Ltd. (AASL) — specifically for passenger boarding pass scanning at Araliya Lounge, BIA.
+        </p>
+        <p style="text-align: left; font-size: 14px;">
+          ✨ <strong>Main Features:</strong><br>
+          • Scan passenger boarding passes and manual data entry<br>
+          • Generate detailed reports (daily, passenger summary, airline-wise, email summary)<br>
+          • Insert, update, delete data, with edit history tracking
+        </p>
+        <p style="text-align: left; font-size: 14px; color: red;">
+          ⚠️ Note: This application is designed for desktop use only (not responsive).
+        </p>
+      `,
+				icon: 'info',
+				confirmButtonText: 'Next',
+				customClass: {
+					popup: 'wide-swal-popup',
+					confirmButton: 'custom-ok-btn'
+				}
+			}).then(() => {
+				// Page 2
+				Swal.fire({
+					title: '<span style="font-size: 22px; font-weight: bold;">👥 User Roles & Tech Stack</span>',
+					html: `
+          <p style="text-align: left; font-size: 14px;">
+            ✨ <strong>User Roles:</strong><br>
+            • <strong>User</strong>: Data entry, update, delete, send emails, generate reports<br>
+            • <strong>Admin</strong>: User management, view edit history, manage emails
+          </p>
+          <p style="text-align: left; font-size: 14px;">
+            🛠️ <strong>Technology Stack:</strong><br>
+            Bootstrap, PHP, TomSelect, Parsley.js, DataTables
+          </p>
+          <p style="text-align: center; font-size: 14px;">
+            👨‍💻 <strong>Developed by:</strong> Janindu Gaurinda (Intern, AASL)
+          </p>
+          <p style="text-align: center; font-size: 14px; color: red;">
+            ⚠️ Backend source code and database access are not publicly shared.
+          </p>
+          <p style="text-align: center; font-size: 14px;">🙏 Thank you for visiting!</p>
+        `,
+					icon: 'info',
+					confirmButtonText: '<i class="bi bi-check-circle"></i> OK',
+					customClass: {
+						popup: 'wide-swal-popup',
+						confirmButton: 'custom-ok-btn'
+					}
+				});
+			});
+
+			sessionStorage.setItem('welcomeShown', 'true');
+		}
+	</script>
+
+
+</body>
+
+</html>
